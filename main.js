@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, observerOptions);
 
   function triggerAnimations() {
-    const animElements = document.querySelectorAll('.active .steam-section, .active .steam-card, .active .timeline-step, .active .section-title');
+    const animElements = document.querySelectorAll('.active .steam-section, .active .steam-card, .active .timeline-step, .active .section-title, .active .section-sticky-image');
     animElements.forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';

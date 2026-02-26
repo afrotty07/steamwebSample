@@ -195,8 +195,15 @@ body {
     transform: translateY(0);
 }
 
-/* Progression Timeline (Vertical Step View) */
+/* Section Layout for Category View */
+.section-layout {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
 .progression-timeline {
+    flex: 1;
     position: relative;
     padding-left: 4rem;
     margin: 2rem 0;
@@ -212,9 +219,103 @@ body {
     background: linear-gradient(to bottom, var(--accent-1), rgba(59, 130, 246, 0.1));
 }
 
+.section-sticky-image {
+    flex: 1;
+    position: sticky;
+    top: 8rem;
+    height: 500px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+}
+
+.feature-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.feature-image-placeholder::after {
+    content: attr(data-topic);
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+.feature-image-placeholder:hover {
+    transform: scale(1.05);
+}
+
+.feature-image-placeholder[data-topic="thinking"] {
+    background: radial-gradient(circle at top left, var(--accent-1), transparent),
+        radial-gradient(circle at bottom right, var(--accent-2), transparent),
+        var(--primary);
+}
+
+.feature-image-placeholder[data-topic="ai"] {
+    background: radial-gradient(circle at top right, var(--accent-2), transparent),
+        radial-gradient(circle at bottom left, var(--accent-3), transparent),
+        var(--primary);
+}
+
+.feature-image-placeholder[data-topic="data"] {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    background-image: radial-gradient(var(--accent-1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.feature-image-placeholder[data-topic="modeling"] {
+    background: linear-gradient(45deg, var(--primary) 25%, transparent 25%),
+        linear-gradient(-45deg, var(--primary) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, var(--accent-1) 75%),
+        linear-gradient(-45deg, transparent 75%, var(--accent-1) 75%);
+    background-size: 40px 40px;
+    background-color: #030712;
+    opacity: 0.8;
+}
+
+.feature-image-placeholder[data-topic="coding"] {
+    background: linear-gradient(to right, rgba(59, 130, 246, 0.2) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(59, 130, 246, 0.2) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-color: var(--primary);
+}
+
+.feature-image-placeholder[data-topic="expression"] {
+    background: conic-gradient(from 180deg at 50% 50%, var(--accent-1), var(--accent-2), var(--accent-3), var(--accent-1));
+    filter: blur(40px);
+    opacity: 0.5;
+}
+
+@media (max-width: 900px) {
+    .section-layout {
+        flex-direction: column;
+    }
+
+    .section-sticky-image {
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: 300px;
+        order: -1;
+        /* Image on top for mobile */
+        margin-bottom: 2rem;
+    }
+}
+
+/* Timeline Step Adjustments */
 .timeline-step {
     position: relative;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 
 .step-grade {
@@ -251,55 +352,16 @@ body {
     transition: var(--transition);
 }
 
-.step-image {
-    flex-shrink: 0;
-    width: 380px;
-    height: 220px;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-}
-
-.step-image::before {
-    content: 'IMAGE SPACE';
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    color: var(--text-muted);
-    opacity: 0.5;
-}
-
-.step-image:hover {
-    border-color: var(--accent-1);
-    transform: scale(1.02);
-}
-
-.timeline-step.highlight .step-content,
-.timeline-step.highlight .step-image {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
-    border-color: rgba(59, 130, 246, 0.5);
-}
-
-.timeline-step.highlight .step-grade {
-    background: var(--accent-1);
-    color: white;
-}
-
 .step-content h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
     color: var(--text-main);
 }
 
 .step-content p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .step-content:hover {
