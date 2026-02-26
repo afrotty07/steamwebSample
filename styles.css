@@ -1,18 +1,16 @@
 :root {
-    --primary: #0f172a;
-    --accent-1: #3b82f6;
-    /* Blue */
-    --accent-2: #8b5cf6;
-    /* Purple */
-    --accent-3: #ec4899;
-    /* Pink */
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --glass-bg: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --primary: #f8fafc;
+    --accent-1: #2563eb;
+    /* Pro Blue */
+    --accent-2: #7c3aed;
+    --accent-3: #db2777;
+    --text-main: #000000;
+    --text-muted: #4b5563;
+    --glass-bg: rgba(0, 0, 0, 0.03);
+    --glass-border: rgba(0, 0, 0, 0.1);
     --sidebar-width: 260px;
     --radius: 12px;
-    --shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+    --shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -25,7 +23,7 @@
 
 body {
     font-family: 'Outfit', 'Noto Sans JP', sans-serif;
-    background-color: #030712;
+    background-color: #ffffff;
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
@@ -39,9 +37,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: radial-gradient(circle at 50% 50%, rgba(30, 27, 75, 0.9) 0%, rgba(3, 7, 18, 1) 100%), url('steam_curriculum_hero.png');
-    background-size: cover;
-    background-position: center;
+    background: #ffffff;
 }
 
 .bg-wrapper::after {
@@ -65,8 +61,7 @@ body {
 /* Sidebar */
 .sidebar {
     width: var(--sidebar-width);
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(20px);
+    background: #f1f5f9;
     border-right: 1px solid var(--glass-border);
     padding: 2.5rem 1.5rem;
     position: sticky;
@@ -124,10 +119,7 @@ body {
     font-size: 4.5rem;
     font-weight: 800;
     margin-bottom: 0.5rem;
-    background: linear-gradient(to right, #fff, var(--accent-1));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--accent-1);
     letter-spacing: -0.04em;
 }
 
@@ -355,7 +347,7 @@ body {
 .step-content h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: var(--text-main);
+    color: var(--accent-1);
 }
 
 .step-content p {
@@ -445,6 +437,7 @@ body {
     display: flex;
     align-items: baseline;
     gap: 1.5rem;
+    color: var(--accent-1);
 }
 
 .section-title span {
@@ -473,7 +466,7 @@ body {
 .steam-card h3 {
     font-size: 1.25rem;
     margin-bottom: 1rem;
-    color: var(--text-main);
+    color: var(--accent-1);
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -500,7 +493,7 @@ body {
 
 /* Footer Simulation */
 .footer {
-    background: #030712;
+    background: #f1f5f9;
     border-top: 1px solid var(--glass-border);
     padding: 6rem;
     margin-top: 5rem;
@@ -515,7 +508,7 @@ body {
 .footer-col h5 {
     margin-bottom: 2rem;
     font-size: 0.9rem;
-    color: var(--text-main);
+    color: var(--accent-1);
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
